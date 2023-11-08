@@ -1,8 +1,8 @@
 "use client";
 
 import AccordianList from "~/components/accordian";
-import Casestudy from "~/components/casestudy";
 import Content from "~/components/content";
+import Experience from "~/components/experience";
 import Hero from "~/components/hero";
 import Link from "next/link";
 import MainLayout from "~/components/layouts/main";
@@ -10,6 +10,7 @@ import Navbar from "~/components/navbar";
 import ScreenshotBlockrecipes from "~/assets/screenshots/screenshot-blockrecipes.png";
 import ScreenshotCMC from "~/assets/screenshots/screenshot-cmc.png";
 import ScreenshotGoodmix from "~/assets/screenshots/screenshot-goodmix.png";
+import ScreenshotWilakMedia from "~/assets/screenshots/wilak-media.png";
 import ScrollingBanner from "~/components/scrollingBanner";
 import {Services} from "~/config/services";
 import {StarFilledIcon} from "@radix-ui/react-icons";
@@ -36,75 +37,54 @@ export default function Home() {
         </p>
       </Content>
       <ScrollingBanner baseVelocity={-3}>Experience</ScrollingBanner>
-      <Casestudy
+      <Experience
         imageDirection="right"
         link="/casestudies/blockrecipes"
-        imageSrc={ScreenshotBlockrecipes}
-        title="Blockrecipes"
-        services={[
-          "Web Design",
-          "UX / UI Design",
-          "Web Development",
-          "Software Development",
-          "SEO Optimization",
-          "Maintenance",
+        imageSrc={ScreenshotWilakMedia}
+        title="Wilak Media"
+        role="Web Development Manager"
+        stack={[
+          {
+            name: "Typescript",
+            link: "https://www.typescriptlang.org/",
+          },
+          {
+            name: "NextJS",
+            link: "https://nextjs.org/",
+          },
+          {
+            name: "React",
+            link: "https://react.dev/",
+          },
+          {
+            name: "TailwindCSS",
+            link: "https://tailwindcss.com/",
+          },
+          {
+            name: "Shopify CMS",
+            link: "https://www.shopify.com/au/tour/ecommerce-cms",
+          },
+          {
+            name: "Figma",
+            link: "https://www.figma.com/",
+          },
+          {
+            name: "Google Analytics",
+            link: "https://analytics.google.com/",
+          },
         ]}
       >
-        Our landing page redesign, coupled with performance enhancements,
-        resulted in both an{" "}
-        <span className="font-semibold underline">
-          82% increase in conversion rate
-        </span>{" "}
-        and a{" "}
-        <span className="font-semibold underline">
-          35% reduction in bounce rate
-        </span>
-        , delivering a faster and more effective user experience.
-      </Casestudy>
-      <Casestudy
-        imageDirection="left"
-        link="/casestudies/goodmix"
-        imageSrc={ScreenshotGoodmix}
-        title="Goodmix Superfoods"
-        services={[
-          "Web Design",
-          "Web Development",
-          "SEO Optimization",
-          "Maintenance",
-        ]}
-      >
-        Our E-Commerce Store Redesign and development, coupled with on-going SEO
-        optimization, resulted in both an{" "}
-        <span className="font-semibold underline">
-          52% increase in Conversion Rate
-        </span>{" "}
-        generating an extra{" "}
-        <span className="font-semibold underline">$2,500,000 in revenue</span>,
-        over a 1 year period.
-      </Casestudy>
-      <Casestudy
-        imageDirection="right"
-        link="/casestudies/creative-minds-conference"
-        imageSrc={ScreenshotCMC}
-        title="Creative Minds Conference"
-        services={[
-          "Web Design",
-          "Web Development",
-          "SEO Optimization",
-          "Maintenance",
-        ]}
-      >
-        Our website redesign and recode resulted in a{" "}
-        <span className="font-semibold underline">
-          {" "}
-          430% increase in page load speed
-        </span>{" "}
-        and a{" "}
-        <span className="font-semibold underline">
-          52% increase in lead-gen{" "}
-        </span>{" "}
-        , delivering a faster and more effective user experience.
-      </Casestudy>
+        Wilak Media is a Marketing Consultancy which specializes in scaling
+        brands profitably. My main roles include{" "}
+        <span className="font-semibold underline">Designing</span>,{" "}
+        <span className="font-semibold underline">Developing</span> and{" "}
+        <span className="font-semibold underline">Deploying</span>, ecommerce
+        stores, landing pages and web applications. My main responsibilities
+        include: optimizing conversion rates, user experience and SEO, whilst
+        simultaneously creating a good developer experience for my team and
+        future teams.
+      </Experience>
+
       <Content cta ctaText="More Casestudies" ctaLink="/casestudies">
         <div className="my-2 flex items-center justify-center">
           <StarFilledIcon className="h-8 w-8" />
@@ -124,7 +104,7 @@ export default function Home() {
         </span>
       </Content>
       <ScrollingBanner baseVelocity={-3}>Services</ScrollingBanner>
-      <AccordianList items={Services} />
+      {/* <AccordianList items={Services} /> */}
       {/* <About
         imageDirection="left"
         imageSrc={Selfy}
