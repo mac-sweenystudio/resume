@@ -170,7 +170,7 @@ export default function Home() {
       </Experience>
       <ScrollingBanner baseVelocity={-200}>Skills</ScrollingBanner>
 
-      <AccordianList items={Services} />
+      {/* <AccordianList items={Services} /> */}
       {/* <About
         imageDirection="left"
         imageSrc={Selfy}
