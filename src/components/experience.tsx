@@ -33,20 +33,15 @@ export default function Experience({
   const {setSize} = useSize();
   const ref = useRef(null);
   const isInView = useInView(ref);
-  const {scrollYProgress} = useScroll({target: ref});
-  const y = useParallax(scrollYProgress, -300, 0.3);
 
   return (
-    <Container className="relative my-32 z-10 ">
+    <Container className="relative my-12 z-10 ">
       <motion.dl
         initial="initial"
         ref={ref}
         animate={isInView ? "animate" : "initial"}
         variants={staggeredAnimationFast}
-        className="border-b border-white/20 lg:grid lg:grid-cols-2 lg:py-16  "
-        style={{
-          y: y,
-        }}
+        className="border-b border-white/20 lg:grid lg:grid-cols-2 lg:py-8  "
       >
         <div className="relative z-10 p-8">
           <motion.ul variants={bounceAnimation}>

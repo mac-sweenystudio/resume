@@ -33,7 +33,7 @@ export default function Home() {
           of 50+ clients.
         </p>
       </Content>
-      <ScrollingBanner baseVelocity={-2}>Experience</ScrollingBanner>
+      <ScrollingBanner baseVelocity={-200}>Experience</ScrollingBanner>
       <Experience
         imageDirection="right"
         imageSrc={ScreenshotWilakMedia}
@@ -161,18 +161,16 @@ export default function Home() {
           },
         ]}
       >
-        Wilak Media is a Marketing Consultancy which specializes in scaling
-        brands profitably. My main roles include{" "}
-        <span className="font-semibold underline">Designing</span>,{" "}
-        <span className="font-semibold underline">Developing</span> and{" "}
-        <span className="font-semibold underline">Deploying</span>, ecommerce
-        stores, landing pages and web applications. My main responsibilities
-        include: optimizing conversion rates, user experience and SEO, whilst
-        simultaneously creating a good developer experience for my team and
-        future teams.
+        Dexioprotocol is a Web3 gaming startup. My main roles include{" "}
+        <span className="font-semibold underline">Designing</span>, and creating{" "}
+        <span className="font-semibold underline">user stories</span> for the
+        developers to implement. My main responsibilities include: creating a
+        good user experience for the Dexioprotocol web application, listening to
+        user feedback and turning them into developer-friendly user stories.
       </Experience>
-      <ScrollingBanner baseVelocity={-2}>Skills</ScrollingBanner>
-      {/* <AccordianList items={Services} /> */}
+      <ScrollingBanner baseVelocity={-200}>Skills</ScrollingBanner>
+
+      <AccordianList items={Services} />
       {/* <About
         imageDirection="left"
         imageSrc={Selfy}

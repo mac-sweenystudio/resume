@@ -18,7 +18,7 @@ interface ScrollingBannerProps {
 
 export default function ScrollingBanner({
   children,
-  baseVelocity = 3,
+  baseVelocity = 300,
 }: ScrollingBannerProps) {
   const baseX = useMotionValue(0);
   const {scrollY} = useScroll();
@@ -40,7 +40,8 @@ export default function ScrollingBanner({
 
   const directionFactor = useRef<number>(1);
   useAnimationFrame((t, delta) => {
-    let moveBy = directionFactor.current * baseVelocity * (delta / 1000);
+    let moveBy =
+      directionFactor.current * (baseVelocity / 1000) * (delta / 1000);
 
     /**
      * This is what changes the direction of the scroll once we
@@ -65,7 +66,7 @@ export default function ScrollingBanner({
         }}
         className="font-coolvetica flex flex-row flex-nowrap items-center whitespace-nowrap text-[120px] uppercase text-black lg:text-[200px] "
       >
-        {Array.from({length: 18}).map(() => (
+        {Array.from({length: 180}).map(() => (
           <span className="mx-4" key="banner title">
             {children}
           </span>
