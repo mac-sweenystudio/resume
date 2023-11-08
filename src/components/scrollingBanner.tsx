@@ -8,7 +8,8 @@ import {
   useVelocity,
   wrap,
 } from "framer-motion";
-import { useRef } from "react";
+
+import {useRef} from "react";
 
 interface ScrollingBannerProps {
   children: React.ReactNode;
@@ -20,7 +21,7 @@ export default function ScrollingBanner({
   baseVelocity = 3,
 }: ScrollingBannerProps) {
   const baseX = useMotionValue(0);
-  const { scrollY } = useScroll();
+  const {scrollY} = useScroll();
   const scrollVelocity = useVelocity(scrollY);
   const smoothVelocity = useSpring(scrollVelocity, {
     damping: 50,
@@ -64,7 +65,7 @@ export default function ScrollingBanner({
         }}
         className="font-coolvetica flex flex-row flex-nowrap items-center whitespace-nowrap text-[120px] uppercase text-black lg:text-[200px] "
       >
-        {Array.from({ length: 8 }).map(() => (
+        {Array.from({length: 18}).map(() => (
           <span className="mx-4" key="banner title">
             {children}
           </span>

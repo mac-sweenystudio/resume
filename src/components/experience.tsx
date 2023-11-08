@@ -13,7 +13,6 @@ import {useSize} from "~/contexts/sizeContext";
 interface ExperienceProps {
   children?: React.ReactNode;
   role?: string;
-  link: string;
   imageDirection: "left" | "right";
   imageSrc: StaticImageData;
   title: string;
@@ -26,7 +25,6 @@ interface ExperienceProps {
 export default function Experience({
   children,
   role,
-  link,
   imageDirection,
   imageSrc,
   title,
@@ -37,7 +35,6 @@ export default function Experience({
   const isInView = useInView(ref);
   const {scrollYProgress} = useScroll({target: ref});
   const y = useParallax(scrollYProgress, -300, 0.3);
-  const opacity = useTransform(scrollYProgress, [0, 0.5], [0.6, 1]);
 
   return (
     <Container className="relative my-32 z-10 ">
@@ -53,15 +50,14 @@ export default function Experience({
       >
         <div className="relative z-10 p-8">
           <motion.ul variants={bounceAnimation}>
-            <Link
-              href={link}
-              className=" text-3xl text-white/75 hover:underline lg:text-4xl flex flex-col gap-y-2 lg:gap-y-6"
+            <div
+              className=" text-3xl text-white/75 lg:text-4xl flex flex-col gap-y-2 lg:gap-y-6"
               onMouseEnter={() => setSize(80)}
               onMouseLeave={() => setSize(40)}
             >
               <span className="text-md lg:text-lg ">{role}</span>
               {title}
-            </Link>
+            </div>
           </motion.ul>
           <motion.ul
             variants={bounceAnimation}
@@ -96,15 +92,13 @@ export default function Experience({
           )}
           variants={bounceAnimation}
         >
-          <Link passHref href={link}>
-            <Image
-              src={imageSrc}
-              alt={title}
-              className="h-auto w-full rounded-lg border border-white/20"
-              onMouseEnter={() => setSize(120)}
-              onMouseLeave={() => setSize(40)}
-            />
-          </Link>
+          <Image
+            src={imageSrc}
+            alt={title}
+            className="h-auto w-full rounded-lg border border-white/20"
+            onMouseEnter={() => setSize(120)}
+            onMouseLeave={() => setSize(40)}
+          />
         </motion.ul>
       </motion.dl>
     </Container>

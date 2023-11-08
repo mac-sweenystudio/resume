@@ -8,12 +8,9 @@ import Link from "next/link";
 import MainLayout from "~/components/layouts/main";
 import Navbar from "~/components/navbar";
 import ScreenshotBlockrecipes from "~/assets/screenshots/screenshot-blockrecipes.png";
-import ScreenshotCMC from "~/assets/screenshots/screenshot-cmc.png";
-import ScreenshotGoodmix from "~/assets/screenshots/screenshot-goodmix.png";
+import ScreenshotDexioprotocol from "~/assets/screenshots/screenshot-dexioprotocol.png";
 import ScreenshotWilakMedia from "~/assets/screenshots/wilak-media.png";
 import ScrollingBanner from "~/components/scrollingBanner";
-import {Services} from "~/config/services";
-import {StarFilledIcon} from "@radix-ui/react-icons";
 import Stats from "~/components/stats";
 
 export default function Home() {
@@ -36,10 +33,9 @@ export default function Home() {
           of 50+ clients.
         </p>
       </Content>
-      <ScrollingBanner baseVelocity={-3}>Experience</ScrollingBanner>
+      <ScrollingBanner baseVelocity={-2}>Experience</ScrollingBanner>
       <Experience
         imageDirection="right"
-        link="/casestudies/blockrecipes"
         imageSrc={ScreenshotWilakMedia}
         title="Wilak Media"
         role="Web Development Manager"
@@ -61,8 +57,12 @@ export default function Home() {
             link: "https://tailwindcss.com/",
           },
           {
-            name: "Shopify CMS",
-            link: "https://www.shopify.com/au/tour/ecommerce-cms",
+            name: "PlanetScale",
+            link: "https://planetscale.com/",
+          },
+          {
+            name: "Drizzle ORM",
+            link: "https://orm.drizzle.team/",
           },
           {
             name: "Figma",
@@ -84,26 +84,94 @@ export default function Home() {
         simultaneously creating a good developer experience for my team and
         future teams.
       </Experience>
-
-      <Content cta ctaText="More Casestudies" ctaLink="/casestudies">
-        <div className="my-2 flex items-center justify-center">
-          <StarFilledIcon className="h-8 w-8" />
-          <StarFilledIcon className="h-8 w-8" />
-          <StarFilledIcon className="h-8 w-8" />
-          <StarFilledIcon className="h-8 w-8" />
-          <StarFilledIcon className="h-8 w-8" />
-        </div>
-        <span className="italic">
-          &quot;Our Shopify Store was growing slowly. However, after MAC SWEENY
-          made us a dedicated landing page for our best selling product, we saw
-          a{" "}
-          <strong className="underline">52% increase in conversion rate</strong>{" "}
-          and a{" "}
-          <strong className="underline">35% reduction in bounce rate</strong>,
-          delivering a faster and more effective customer experience.&quot;
-        </span>
-      </Content>
-      <ScrollingBanner baseVelocity={-3}>Services</ScrollingBanner>
+      <Experience
+        imageDirection="left"
+        imageSrc={ScreenshotBlockrecipes}
+        title="Blockrecipes"
+        role="Full-Stack Web Developer"
+        stack={[
+          {
+            name: "Typescript",
+            link: "https://www.typescriptlang.org/",
+          },
+          {
+            name: "NextJS",
+            link: "https://nextjs.org/",
+          },
+          {
+            name: "React",
+            link: "https://react.dev/",
+          },
+          {
+            name: "TailwindCSS",
+            link: "https://tailwindcss.com/",
+          },
+          {
+            name: "Supabase",
+            link: "https://supabase.com/",
+          },
+          {
+            name: "Drizzle ORM",
+            link: "https://orm.drizzle.team/",
+          },
+          {
+            name: "Figma",
+            link: "https://www.figma.com/",
+          },
+          {
+            name: "Google Analytics",
+            link: "https://analytics.google.com/",
+          },
+        ]}
+      >
+        Blockrecipes is a startup SaaS with is developing a{" "}
+        <strong className="font-semibold underline">Real-Time</strong>{" "}
+        blockchain API. My main roles include{" "}
+        <span className="font-semibold underline">Designing</span> and{" "}
+        <span className="font-semibold underline">Developing</span> the
+        Blockrecipes web application. My main responsibilities include:
+        implementing real-time data and features into the UI whilst
+        simultaneously maintaining a good customer experience.
+      </Experience>
+      <Experience
+        imageDirection="right"
+        imageSrc={ScreenshotDexioprotocol}
+        title="Dexioprotocol"
+        role="Junior Frontend Developer"
+        stack={[
+          {
+            name: "Typescript",
+            link: "https://www.typescriptlang.org/",
+          },
+          {
+            name: "React",
+            link: "https://react.dev/",
+          },
+          {
+            name: "TailwindCSS",
+            link: "https://tailwindcss.com/",
+          },
+          {
+            name: "Figma",
+            link: "https://www.figma.com/",
+          },
+          {
+            name: "AdobeXD",
+            link: "https://helpx.adobe.com/au/support/xd.html",
+          },
+        ]}
+      >
+        Wilak Media is a Marketing Consultancy which specializes in scaling
+        brands profitably. My main roles include{" "}
+        <span className="font-semibold underline">Designing</span>,{" "}
+        <span className="font-semibold underline">Developing</span> and{" "}
+        <span className="font-semibold underline">Deploying</span>, ecommerce
+        stores, landing pages and web applications. My main responsibilities
+        include: optimizing conversion rates, user experience and SEO, whilst
+        simultaneously creating a good developer experience for my team and
+        future teams.
+      </Experience>
+      <ScrollingBanner baseVelocity={-2}>Skills</ScrollingBanner>
       {/* <AccordianList items={Services} /> */}
       {/* <About
         imageDirection="left"
