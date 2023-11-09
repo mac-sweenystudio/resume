@@ -1,33 +1,11 @@
-import { mainMenu } from "~/config/navigation";
-import { socials } from "~/config/socials";
-import { bounceAnimation } from "~/utils/animations";
-import { motion } from "framer-motion";
 import Image from "next/image";
 import Link from "next/link";
+import {bounceAnimation} from "~/utils/animations";
+import {mainMenu} from "~/config/navigation";
+import {motion} from "framer-motion";
+import {socials} from "~/config/socials";
 
-const navigation = {
-  mainMenu,
-  support: [
-    { name: "Pricing", href: "#" },
-    { name: "Documentation", href: "#" },
-    { name: "Guides", href: "#" },
-    { name: "API Status", href: "#" },
-  ],
-  company: [
-    { name: "About", href: "#" },
-    { name: "Blog", href: "#" },
-    { name: "Jobs", href: "#" },
-    { name: "Press", href: "#" },
-    { name: "Partners", href: "#" },
-  ],
-  legal: [
-    { name: "Claim", href: "#" },
-    { name: "Privacy", href: "#" },
-    { name: "Terms", href: "#" },
-  ],
-};
-
-export default function Footer() {
+export function OldFooter() {
   return (
     <footer aria-labelledby="footer-heading">
       <h2 id="footer-heading" className="sr-only">
@@ -136,6 +114,28 @@ export default function Footer() {
         </div>
         <div className="mt-16 border-t border-white/10 pt-8 sm:mt-20 lg:mt-24">
           <p className="text-xs leading-5 text-gray-400">
+            &copy; 2023 Mac Sweeny, Inc. All rights reserved.
+          </p>
+        </div>
+      </div>
+    </footer>
+  );
+}
+
+export default function Footer() {
+  return (
+    <footer>
+      <div className="mx-auto max-w-7xl px-6 py-12 md:flex md:items-center md:justify-between lg:px-8">
+        <div className="flex justify-center space-x-6 md:order-2">
+          {socials.map((item) => (
+            <a key={item.name} href={item.href} className="text-white">
+              <span className="sr-only">{item.name}</span>
+              <item.icon className="h-8 w-8" aria-hidden="true" />
+            </a>
+          ))}
+        </div>
+        <div className="mt-8 md:order-1 md:mt-0">
+          <p className="text-center text-xs leading-5 text-white">
             &copy; 2023 Mac Sweeny, Inc. All rights reserved.
           </p>
         </div>
