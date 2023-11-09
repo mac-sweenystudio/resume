@@ -149,6 +149,7 @@ function DesktopNavbar() {
       <motion.a
         variants={bounceAnimation}
         className="z-10 hidden font-coolvetica text-3xl uppercase text-white lg:flex"
+        href="/"
       >
         MAC SWEENY
       </motion.a>
