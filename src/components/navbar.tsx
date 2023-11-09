@@ -61,7 +61,13 @@ export const MenuToggle = ({toggle}: {toggle: () => void}) => (
   </button>
 );
 
-function MobileNavigation({open}: {open: boolean}) {
+function MobileNavigation({
+  open,
+  toggleOpen,
+}: {
+  open: boolean;
+  toggleOpen: () => void;
+}) {
   return (
     <motion.ul
       className={`width-72 padding-6 fixed top-24 flex h-screen flex-col gap-y-12  text-2xl text-black ${
@@ -76,8 +82,13 @@ function MobileNavigation({open}: {open: boolean}) {
           whileHover={{scale: 1.1}}
           whileTap={{scale: 0.95}}
         >
-          <Link className="flex w-full" href={item.path}>
+          <Link
+            className="flex w-full gap-x-2 items-center flex-row "
+            href={item.path}
+            onClick={toggleOpen}
+          >
             {item.title}
+            {item.icon ? <item.icon className="h-6 w-6" /> : null}
           </Link>
         </motion.li>
       ))}
@@ -114,7 +125,7 @@ function MobileNavbar() {
         className=" flex lg:hidden"
       >
         <motion.div className="background" variants={sidebarAnimation} />
-        <MobileNavigation open={isOpen} />
+        <MobileNavigation open={isOpen} toggleOpen={toggleOpen} />
         <MenuToggle toggle={() => toggleOpen()} />
       </motion.nav>
       <motion.a
@@ -156,8 +167,10 @@ function DesktopNavbar() {
               variants={linkAnimation}
               initial="initial"
               whileHover="hover"
+              className="gap-x-2 flex flex-row"
             >
               {item.title}
+              {item.icon ? <item.icon className="h-6 w-6" /> : null}
             </motion.div>
           </Link>
         ))}
