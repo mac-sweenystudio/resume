@@ -1,8 +1,14 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+## Summary
+
+This is a simple web app that uses TailwindCSS & Framer Motion to create a nice looking UI. It also uses Next.js to create a serverless function that sends an email to me when they submit the contact form. Feel free to use this as a template for your own projects. I will be adding more features to this when I get some free time. Remember to leave a star :)
 
 ## Getting Started
 
-First, run the development server:
+First, Create a google account app password from https://myaccount.google.com/apppasswords
+
+Then, create a `.env.local` file similar to `.env.example` and add your app password and email address.
+
+Then, run the development server:
 
 ```bash
 npm run dev
@@ -17,8 +23,6 @@ bun dev
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
 You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
-
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
 
 ## Learn More
 
