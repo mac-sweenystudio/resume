@@ -1,4 +1,4 @@
-import { GitHubLogoIcon, LinkedInLogoIcon } from "@radix-ui/react-icons";
+import {GitHubLogoIcon, LinkedInLogoIcon} from "@radix-ui/react-icons";
 
 export const socials = [
   {
@@ -10,7 +10,7 @@ export const socials = [
   {
     id: 2,
     name: "Github",
-    href: "https://github.com/mac-eth/portfolio",
+    href: "https://github.com/mac-eth/resume",
     icon: GitHubLogoIcon,
   },
 ];

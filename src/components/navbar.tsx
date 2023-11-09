@@ -7,13 +7,15 @@ import {
   staggeredAnimation,
 } from "~/utils/animations";
 import {motion, useCycle} from "framer-motion";
+import {useEffect, useRef, useState} from "react";
 
 import Container from "~/components/container";
 import Link from "next/link";
+import RepoStarIcon from "./repoStarButton";
+import {StarFilledIcon} from "@radix-ui/react-icons";
 import {mainMenu} from "~/config/navigation";
 import {socials} from "~/config/socials";
 import {useDimensions} from "~/utils/useDimensions";
-import {useRef} from "react";
 
 const Path = (props: {
   d?: string;
@@ -64,9 +66,11 @@ export const MenuToggle = ({toggle}: {toggle: () => void}) => (
 function MobileNavigation({
   open,
   toggleOpen,
+  starCount,
 }: {
   open: boolean;
   toggleOpen: () => void;
+  starCount: number;
 }) {
   return (
     <motion.ul
@@ -100,8 +104,14 @@ function MobileNavigation({
             whileHover={{scale: 1.1}}
             whileTap={{scale: 0.95}}
           >
-            <Link className="flex w-full" href={item.href}>
+            <Link className="flex w-full items-center gap-x-2" href={item.href}>
               <item.icon className=" h-16 w-16" />
+              {item.name === "Github" ? (
+                <div className="text-black text-4xl items-center flex flex-row gap-x-1">
+                  {starCount}
+                  <StarFilledIcon className="h-9 w-9" />
+                </div>
+              ) : null}
             </Link>
           </motion.li>
         ))}
@@ -110,7 +120,7 @@ function MobileNavigation({
   );
 }
 
-function MobileNavbar() {
+function MobileNavbar({starCount}: {starCount: number}) {
   const [isOpen, toggleOpen] = useCycle(false, true);
   const containerRef = useRef(null);
   const dimensions = useDimensions(containerRef);
@@ -125,7 +135,11 @@ function MobileNavbar() {
         className=" flex lg:hidden"
       >
         <motion.div className="background" variants={sidebarAnimation} />
-        <MobileNavigation open={isOpen} toggleOpen={toggleOpen} />
+        <MobileNavigation
+          open={isOpen}
+          starCount={starCount}
+          toggleOpen={toggleOpen}
+        />
         <MenuToggle toggle={() => toggleOpen()} />
       </motion.nav>
       <motion.a
@@ -138,7 +152,7 @@ function MobileNavbar() {
   );
 }
 
-function DesktopNavbar() {
+function DesktopNavbar({starCount}: {starCount: number}) {
   return (
     <motion.header
       initial="initial"
@@ -192,8 +206,15 @@ function DesktopNavbar() {
               variants={linkAnimation}
               initial="initial"
               whileHover="hover"
+              className="flex flex-row gap-x-2"
             >
               <item.icon className=" h-8 w-8" />
+              {item.name === "Github" ? (
+                <div className="text-white text-2xl items-center flex flex-row gap-x-1">
+                  {starCount}
+                  <StarFilledIcon className="h-6 w-6" />
+                </div>
+              ) : null}
             </motion.div>
           </Link>
         ))}
@@ -203,10 +224,31 @@ function DesktopNavbar() {
 }
 
 export default function Navbar() {
+  const [starCount, setStarCount] = useState<number>(0);
+
+  useEffect(() => {
+    const fetchStars = async () => {
+      try {
+        const response = await fetch(
+          "https://api.github.com/repos/mac-eth/resume"
+        );
+        if (!response.ok) {
+          throw new Error("Network response was not ok");
+        }
+        const data = await response.json();
+        setStarCount(data.stargazers_count.toLocaleString());
+      } catch (error) {
+        console.error("Error fetching star count:", error);
+        setStarCount(0);
+      }
+    };
+
+    fetchStars();
+  }, []);
   return (
     <Container>
-      <MobileNavbar />
-      <DesktopNavbar />
+      <MobileNavbar starCount={starCount} />
+      <DesktopNavbar starCount={starCount} />
     </Container>
   );
 }
