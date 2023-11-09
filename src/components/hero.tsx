@@ -103,7 +103,7 @@ export default function Hero() {
           I&apos;m a self taught{" "}
           <strong className="underline">Full-Stack Web Developer </strong>
           <br className="hidden text-start lg:flex" /> that specialises in
-          creating High Converting & Effecient web applications.
+          creating High Converting & Efficient web applications.
         </motion.p>
         <motion.div className="flex justify-center" variants={bounceAnimation}>
           <Button href="/contact">Lets Chat</Button>
