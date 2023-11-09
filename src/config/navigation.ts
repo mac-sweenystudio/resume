@@ -1,14 +1,17 @@
+import {DownloadIcon} from "@radix-ui/react-icons";
+
 export const mainMenu = [
   {
-    title: "Resume",
-    path: "/resume",
-  },
-  {
     title: "About",
-    path: "/about",
+    path: "#about",
   },
   {
     title: "Contact",
     path: "/contact",
+  },
+  {
+    title: "Download CV",
+    path: "/resume",
+    icon: DownloadIcon,
   },
 ];
