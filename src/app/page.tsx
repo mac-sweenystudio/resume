@@ -1,5 +1,6 @@
 "use client";
 
+import About from "~/components/about";
 import AccordianList from "~/components/accordian";
 import Content from "~/components/content";
 import Experience from "~/components/experience";
@@ -11,6 +12,8 @@ import ScreenshotBlockrecipes from "~/assets/screenshots/screenshot-blockrecipes
 import ScreenshotDexioprotocol from "~/assets/screenshots/screenshot-dexioprotocol.png";
 import ScreenshotWilakMedia from "~/assets/screenshots/wilak-media.png";
 import ScrollingBanner from "~/components/scrollingBanner";
+import Selfy from "~/assets/me.png";
+import {Services} from "~/config/services";
 import Stats from "~/components/stats";
 
 export default function Home() {
@@ -170,24 +173,30 @@ export default function Home() {
       </Experience>
       <ScrollingBanner baseVelocity={-200}>Skills</ScrollingBanner>
 
-      {/* <AccordianList items={Services} /> */}
-      {/* <About
-        imageDirection="left"
-        imageSrc={Selfy}
-        title="About me"
+      <Content className="my-0 lg:my-0">
+        <p>
+          I&apos;m naturally a <span className="underline">curious person</span>{" "}
+          and love learning new technologies and skills. I&apos;ve listed all of
+          the frameworks and skills I&apos;m proficient in below. Feel free to{" "}
+          <span className="underline">ask</span> me about any of them :).
+        </p>
+      </Content>
+      <AccordianList items={Services} />
+      <About
         cta
-        ctaText="More About Me"
-        ctaLink="/about"
+        ctaText="Let's Chat"
+        ctaLink="/contact"
+        title="About Me"
+        imageSrc={Selfy}
+        imageDirection="left"
       >
-        Hi, I&apos;m Mac Sweeny, a passionate designer and coder with a knack
-        for creating beautiful, user-friendly sites. I&apos;ve been in the
-        industry since 2020, and I&apos;m always looking for new and innovative
-        ways to push the boundaries of what&apos;s possible. I&apos;m passionate
-        about my work because I love using my skills to create products that
-        both look good and work well. I believe that good design is essential
-        for creating a positive user experience, and I&apos;m always looking for
-        ways to improve my skills and knowledge.
-      </About> */}
+        I&apos;m a passionate full-stack web developer and designer based out of
+        Brisbane, Australia. I&apos;m currently the Web Development Manager at
+        Wilak Media where I&apos;m responsible for the design, development and
+        performance of 50+ clients. I&apos;m an enthusiastic, naturally curious
+        guy who loves learning new technologies and skills. Outside of work I
+        like to play a bit of cricket and hit the gym.
+      </About>
     </MainLayout>
   );
 }
