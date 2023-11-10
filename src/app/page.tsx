@@ -182,21 +182,15 @@ export default function Home() {
         </p>
       </Content>
       <AccordianList items={Services} />
-      <About
-        cta
-        ctaText="Let's Chat"
-        ctaLink="/contact"
-        title="About Me"
-        imageSrc={Selfy}
-        imageDirection="left"
-      >
+
+      <Content cta ctaText="Let's Chat" ctaLink="/contact">
         I&apos;m a passionate full-stack web developer and designer based out of
         Brisbane, Australia. I&apos;m currently the Web Development Manager at
         Wilak Media where I&apos;m responsible for the design, development and
         performance of 50+ clients. I&apos;m an enthusiastic, naturally curious
         guy who loves learning new technologies and skills. Outside of work I
         like to play a bit of cricket and hit the gym.
-      </About>
+      </Content>
     </MainLayout>
   );
 }
