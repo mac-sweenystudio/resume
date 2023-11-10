@@ -2,8 +2,8 @@ import {DownloadIcon} from "@radix-ui/react-icons";
 
 export const mainMenu = [
   {
-    title: "About",
-    path: "#about",
+    title: "Home",
+    path: "/",
   },
   {
     title: "Contact",
