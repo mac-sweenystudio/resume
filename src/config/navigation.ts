@@ -9,10 +9,9 @@ export const mainMenu = [
     title: "Contact",
     path: "/contact",
   },
-  // TODO: Add CV Download Link
   {
     title: "Download CV",
-    path: "/resume",
+    path: "/CV.pdf",
     icon: DownloadIcon,
   },
 ];

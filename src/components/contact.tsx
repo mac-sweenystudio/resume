@@ -76,8 +76,10 @@ export default function Contact() {
               </span>
             </motion.h1>
             <div className="flex flex-row gap-6">
-              {/* TODO: Add download CV button */}
-              <Button href="/" className="flex flex-row gap-2 items-center">
+              <Button
+                href="/CV.pdf"
+                className="flex flex-row gap-2 items-center"
+              >
                 Download CV <DownloadIcon className="h-6 w-6" />
               </Button>
               <Button href="/">Back to Home</Button>
