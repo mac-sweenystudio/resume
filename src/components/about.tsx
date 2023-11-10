@@ -68,16 +68,16 @@ export default function About({
         </div>
         <motion.ul
           className={cn(
-            "flex items-center",
+            "flex items-center justify-center",
             imageDirection === "left" ? "order-first" : "order-last"
           )}
           variants={bounceAnimation}
         >
-          <div className="flex justify-center ">
+          <div className="flex justify-center items-center ">
             <Image
               src={imageSrc}
               alt={title}
-              className="w-3/4 h-auto rounded-full items-center"
+              className="w-3/4 h-auto rounded-lg items-center brightness-75"
               onMouseEnter={() => setSize(120)}
               onMouseLeave={() => setSize(40)}
             />

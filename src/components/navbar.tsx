@@ -11,7 +11,6 @@ import {useEffect, useRef, useState} from "react";
 
 import Container from "~/components/container";
 import Link from "next/link";
-import RepoStarIcon from "./repoStarButton";
 import {StarFilledIcon} from "@radix-ui/react-icons";
 import {mainMenu} from "~/config/navigation";
 import {socials} from "~/config/socials";
@@ -162,7 +161,7 @@ function DesktopNavbar({starCount}: {starCount: number}) {
     >
       <motion.a
         variants={bounceAnimation}
-        className="z-10 hidden font-coolvetica text-3xl uppercase text-white lg:flex"
+        className="z-10 hidden font-coolvetica w-[140px] text-3xl uppercase text-white lg:flex"
         href="/"
       >
         MAC SWEENY
