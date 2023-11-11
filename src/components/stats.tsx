@@ -6,7 +6,7 @@ import {useSize} from "~/contexts/sizeContext";
 
 const stats = [
   {id: 1, name: "Years of Experience", value: "3+"},
-  {id: 2, name: "Profficient Frameworks", value: "20+"},
+  {id: 2, name: "Proficient Frameworks", value: "20+"},
   {id: 3, name: "Applications Deployed", value: "40+"},
   {id: 4, name: "Cafe's Coded In", value: "100+"},
 ];

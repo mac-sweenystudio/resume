@@ -44,8 +44,8 @@ export default function Home() {
         role="Web Development Manager"
         stack={[
           {
-            name: "Typescript",
-            link: "https://www.typescriptlang.org/",
+            name: "TypeScript",
+            link: "https://www.TypeScriptlang.org/",
           },
           {
             name: "NextJS",
@@ -94,8 +94,8 @@ export default function Home() {
         role="Full-Stack Web Developer"
         stack={[
           {
-            name: "Typescript",
-            link: "https://www.typescriptlang.org/",
+            name: "TypeScript",
+            link: "https://www.TypeScriptlang.org/",
           },
           {
             name: "NextJS",
@@ -143,8 +143,8 @@ export default function Home() {
         role="Junior Frontend Developer"
         stack={[
           {
-            name: "Typescript",
-            link: "https://www.typescriptlang.org/",
+            name: "TypeScript",
+            link: "https://www.TypeScriptlang.org/",
           },
           {
             name: "React",
